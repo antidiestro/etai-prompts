@@ -15,6 +15,7 @@ Follow these steps to complete the task:
 3. Considering the identified objects of study, generate an array of interesting, concise, and easy-to-understand facts:
    - These facts should be written in the same language as the user query.
    - They must be around 40-50 characters long and always end with a period.
+   - Use a friendly tone in the writing.
    - Avoid excessively scientific jargon.
    - Focus on generating unique, interesting facts that can help the average person help something new.
    - It's acceptable to return zero facts if you can't come up facts that match the criteria above.
@@ -23,4 +24,6 @@ The response should be a JSON object containing only a `facts` property, which s
 
 Important considerations:
 
-- Only return the JSON and nothing else. If you can't generate a successful response, return `{ "facts": [] }` and nothing else.
+- Return the JSON result, minified, without any newlines, inside of a <response> tag. There should be no newlines between the <response> tag and the beginning of the JSON, or between the </response> tag and the end of the JSON.
+- Only return the <response> tag and nothing else
+- If you can't generate a successful response, return `{ "facts": [] }` and nothing else.
