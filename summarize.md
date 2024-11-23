@@ -10,7 +10,7 @@ Additionally, you have at your disposal the user-submitted query that originated
 {{QUERY}}
 </user_query>
 
-You must output a JSON document consisting of the following fields: `title`, `clean_query`, `introduction_summary`, `research_findings_summary`, `related_questions`, `query_answer`.
+You must output a JSON document consisting of the following fields: `title`, `clean_query`, `introduction_summary`, `research_findings_summary`, `related_queries`, `query_answer`.
 
 Here is how to resolve each field:
 
@@ -39,7 +39,7 @@ a. the user-submitted query seems to be phrased as a question, in either English
 b. the summaries made so far do not seem to appropriately answer the query,
 then include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `research_findings_summary` field.
 
-## related_questions
+## related_queries
 
 An array of related queries, topics or questions that the user can choose from to continue diving into the research.
 
