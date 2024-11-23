@@ -68,4 +68,4 @@ Important considerations:
 - If the query mentions a specific application or context, include at least one keyword related to that context.
 - Include both general and specific terms related to the topic to capture a range of relevant articles.
 
-Provide your answer in the specified JSON format, enclosed in <answer> tags. Do not output anything after the answer.
+Provide your answer in the specified JSON format, enclosed in <response> tags. Do not output anything after the answer.
