@@ -34,7 +34,11 @@ For example: `This is an example summary that makes a certain statement [1](http
 
 ## query_answer (Optional)
 
-If the summaries made so far do not seem to appropriately answer the user-submitted query, include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `research_findings_summary` field.
+If either:
+a. the user-submitted query seems to be phrased as a question, or
+b. the summaries made so far do not seem to appropriately answer the query,
+
+then include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `research_findings_summary` field.
 
 ## related_questions
 
