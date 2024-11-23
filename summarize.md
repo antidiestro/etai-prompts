@@ -47,4 +47,4 @@ An array of related queries, topics or questions that the user can choose from t
 # Important considerations
 
 - Return all generated text in the same language as the user-submitted query.
-- Return the JSON result, minified, inside of a <response> tag. There should be no newlines between the <response> tag and the beginning of the JSON, or between the </response> tag and the end of the JSON.
+- Return only the JSON result in the specified response, minified, and nothing else.
