@@ -10,13 +10,17 @@ Additionally, you have at your disposal the user-submitted query that originated
 {{QUERY}}
 </user_query>
 
-You must output a JSON document consisting of the following fields: `title`, `introduction_summary`, `research_findings_summary`, `query_answer`.
+You must output a JSON document consisting of the following fields: `title`, `clean_query`, `introduction_summary`, `research_findings_summary`, `related_questions`, `query_answer`.
 
 Here is how to resolve each field:
 
 ## title
 
 A string that represents the title of the topic discussed across all articles.
+
+## clean_query
+
+A modified version of the user query with improved grammar and punctuation.
 
 ## introduction_summary
 
@@ -32,7 +36,11 @@ For example: `This is an example summary that makes a certain statement [1](http
 
 If the summaries made so far do not seem to appropriately answer the user-submitted query, include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `research_findings_summary` field.
 
+## related_questions
+
+An array of related queries, topics or questions that the user can choose from to continue diving into the research.
+
 # Important considerations
 
 - Return all generated text in the same language as the user-submitted query.
-- Return the JSON result inside of a <response> tag.
+- Return the JSON result, minified, inside of a <response> tag. There should be no newlines between the <response> tag and the beginning of the JSON, or between the </response> tag and the end of the JSON.
