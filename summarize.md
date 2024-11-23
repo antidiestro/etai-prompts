@@ -20,7 +20,7 @@ A string that represents the title of the topic discussed across all articles.
 
 ## clean_query
 
-A modified version of the user query with improved grammar and punctuation.
+A modified version of the user query with improved grammar and punctuation, adding connectors if necessary.
 
 ## introduction_summary
 
