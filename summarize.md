@@ -35,3 +35,4 @@ If the summaries made so far do not seem to appropriately answer the user-submit
 # Important considerations
 
 - Return all generated text in the same language as the user-submitted query.
+- Return the JSON result inside of a <response> tag.
