@@ -10,7 +10,7 @@ Additionally, you have at your disposal the user-submitted query that originated
 {{QUERY}}
 </user_query>
 
-You must output a JSON document consisting of the following fields: `title`, `clean_query`, `introduction_summary`, `research_findings_summary`, `related_queries`, `query_answer`.
+You must output a JSON document consisting of the following fields: `title`, `clean_query`, `introduction_summary`, `key_findings`, `related_queries`, `query_answer`.
 
 Here is how to resolve each field:
 
@@ -26,11 +26,14 @@ A modified version of the user query with improved grammar and punctuation, addi
 
 A markdown snippet, consisting of two paragraphs containing a general introduction to the overall topic discussed in the articles, generated using your general knowledge of it. They should be around 300-400 characters long. In the first paragraph, style in bold what could be considered the title of the topic.
 
-## research_findings_summary
+## key_findings
 
-A markdown snippet, consisting of four paragraphs based on the knowledge found in the articles, each one detailing an area of study and its related main findings. They should be around 500-600 characters long. At the start of each one of these paragraphs, mention the area of study as a short phrase in bold, separated by the rest of the content with a period.
-Ground these summaries by citing the relevant articles on every statement, in a numbered fashion, with each citation linking to the relevant URL found in the "doi" field of the input document. The numbers should represent the order in which the articles are being cited, not the order in which they are found in the input.
-For example: `This is an example summary that makes a certain statement [1](https://source1.com), which is reenforced by a second one [2](https://source2.com).`
+Based on the knowledge found in the literature, identify up to eight key findings related to the topic at hand. These should be represented as an array of JSON objects with the following fields:
+
+- `title`: A single sentence around 20 words long that summarizes and serves as an introduction to the finding
+- `summary`: A detailed summary of the finding, around 400 characters long. Ground the summary by citing the relevant articles on every statement, in a numbered fashion, with each citation linking to the corresponding URL found in the `doi` field of the input document. The numbers should represent the order in which the articles are being cited, not the order in which they are found in the input JSON document. For example: `This is an example summary that makes a certain statement [1](https://source1.com), which is reenforced by a second one [2](https://source2.com).`
+
+Make sure these key findings are fairly unique. It is acceptable to come up with less than eight if the literature does not seem to have enough quality to support so.
 
 ## query_answer (Optional)
 
@@ -41,7 +44,7 @@ then include in the JSON response a `query_answer` field. This field should be a
 
 ## related_queries
 
-An array of related queries, topics or questions that the user can choose from to continue diving into the research.
+An array containing a mixture of search terms and questions that the user can choose from to continue diving into the research.
 
 # Important considerations
 
