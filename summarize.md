@@ -31,7 +31,7 @@ A markdown snippet, consisting of two paragraphs containing a general introducti
 Based on the knowledge found in the literature, identify up to eight key findings related to the topic at hand. These should be represented as an array of JSON objects with the following fields:
 
 - `title`: A single sentence around 20 words long that summarizes and serves as an introduction to the finding
-- `summary`: A detailed summary of the finding, around 400 characters long. Ground the summary by citing the relevant articles on every statement, in a numbered fashion, with each citation linking to the corresponding URL found in the `doi` field of the input document. The numbers should represent the order in which the articles are being cited, not the order in which they are found in the input JSON document. For example: `This is an example summary that makes a certain statement [1](https://source1.com), which is reenforced by a second one [2](https://source2.com).`
+- `summary`: A detailed summary of the finding, around 400 characters long. Ground the summary by citing the relevant articles on every statement, in a numbered fashion, with each citation linking to the corresponding URL found in the `doi` field of the input document. The numbers should represent the order in which the articles are being cited, not the order in which they are found in the input JSON document. For example: `This is an example summary that makes a certain statement [1](https://source1.com), which is reenforced by a second one [2](https://source2.com).` The numeric order of the citations must be reset for each different finding.
 
 Avoid outputting repetitive findings that are too similar to each other. Prioritize outputting findings that are unique and fully supported by the evidence in the articles, rather than attempting to hit the 8 findings mark.
 
@@ -40,7 +40,7 @@ Avoid outputting repetitive findings that are too similar to each other. Priorit
 If either:
 a. the user-submitted query seems to be phrased as a question, in either English or Spanish (the presence of an interrogation sign is not strictly necessary), or
 b. the summaries made so far do not seem to appropriately answer the query,
-then include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `research_findings_summary` field.
+then include in the JSON response a `query_answer` field. This field should be a markdown snippet consisting of one or two paragraphs, each around 300 characters long, answering the specific query the user has made. The statements in the paragraphs must be cited in the same format as the `key_findings` field.
 
 ## related_queries
 
