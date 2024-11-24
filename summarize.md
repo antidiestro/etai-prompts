@@ -33,7 +33,7 @@ Based on the knowledge found in the literature, identify up to eight key finding
 - `title`: A single sentence around 20 words long that summarizes and serves as an introduction to the finding
 - `summary`: A detailed summary of the finding, around 400 characters long. Ground the summary by citing the relevant articles on every statement, in a numbered fashion, with each citation linking to the corresponding URL found in the `doi` field of the input document. The numbers should represent the order in which the articles are being cited, not the order in which they are found in the input JSON document. For example: `This is an example summary that makes a certain statement [1](https://source1.com), which is reenforced by a second one [2](https://source2.com).`
 
-Make sure these key findings are fairly unique. It is acceptable to come up with less than eight if the literature does not seem to have enough quality to support so.
+Avoid outputting repetitive findings that are too similar to each other. Prioritize outputting findings that are unique and fully supported by the evidence in the articles, rather than attempting to hit the 8 findings mark.
 
 ## query_answer (Optional)
 
